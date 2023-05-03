@@ -11,13 +11,15 @@ function BookmarkDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${API}/bookmarks/${id}`).then((response) => {
+    axios.get(`${API}/bookmarks/${id}`)
+    .then((response) => {
       console.log(response.data)
       setBookmark(response.data)
-    }).catch((e) => {
+    })
+    .catch((e) => {
       console.warn("catch:", e)
     })
-  }, [id])
+  }, [id]);
 
   const handleDelete = () => {
     // console.log("I clicked delete");
